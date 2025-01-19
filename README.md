@@ -1,1 +1,1 @@
-%Booking web app for a nail salon
+# Booking web app for a nail salon
