@@ -12,3 +12,46 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Client {
+  id        Int   @id @default(autoincrement())
+  name      String
+  phone     String   @unique
+  email     String?  @unique
+  appointments Appointment[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Worker {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String   @unique
+  email     String?  @unique
+  schedule  WorkerSchedule[]
+  appointments Appointment[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Appointment {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  client    Client   @relation(fields: [clientId], references: [id])
+  clientId  Int
+  worker    Worker   @relation(fields: [workerId], references: [id])
+  workerId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WorkerSchedule {
+  id        Int      @id @default(autoincrement())
+  worker    Worker   @relation(fields: [workerId], references: [id])
+  workerId  Int
+  date      DateTime
+  startTime DateTime
+  endTime   DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
