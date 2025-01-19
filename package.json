@@ -4,6 +4,8 @@
   "description": "booking web app for a nail salon",
   "main": "index.js",
   "scripts": {
+    "local": "set DATABASE_URL=postgresql://postgres:pass123@localhost:5432/booking ts-node src/index.ts" ,
+    "docker": "DATABASE_URL=postgresql://postgres:pass123@pgdb:5432/booking ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
