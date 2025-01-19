@@ -1,0 +1,19 @@
+{
+  "name": "salon_booking",
+  "version": "1.0.0",
+  "description": "booking web app for a nail salon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "@prisma/client": "^6.2.1",
+    "@types/node": "^22.10.7",
+    "prisma": "^6.2.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
