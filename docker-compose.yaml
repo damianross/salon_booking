@@ -2,7 +2,7 @@ services:
   pgdb:
     image: postgres:alpine
     volumes:
-      - sqpostgresdata:/var/lib/postgresql/data
+      - postgresdata:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pass123}
@@ -14,7 +14,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4:latest
     volumes:
-      - sqpgadmindata:/var/lib/pgadmin
+      - pgadmindata:/var/lib/pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGA_EMAIL:-example@mail.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGA_PASSWORD:-pass123}
@@ -23,5 +23,5 @@ services:
         - "5050:80"
   
 volumes:
-  sqpostgresdata:
-  sqpgadmindata:
+  postgresdata:
+  pgadmindata:
