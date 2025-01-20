@@ -30,7 +30,7 @@ model Worker {
 model Appointment {
   id        Int      @id @default(autoincrement())
   date      DateTime
-  clientPhone  String   @unique @map("client_phone")
+  clientPhone  String   @map("client_phone")
   clientName  String    @map("client_name")
   worker    Worker   @relation(fields: [workerId], references: [id])
   workerId  Int      @map("worker_id")
