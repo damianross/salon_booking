@@ -44,7 +44,6 @@ model WorkerSchedule {
   id        Int      @id @default(autoincrement())
   worker    Worker   @relation(fields: [workerId], references: [id])
   workerId  Int      @map("worker_id")
-  date      DateTime
   startTime DateTime @map("start_time")
   endTime   DateTime @map("end_time")
   createdAt DateTime @default(now())  @map("created_at")

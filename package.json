@@ -4,20 +4,20 @@
   "description": "booking web app for a nail salon",
   "main": "index.js",
   "scripts": {
-    "local": "set DATABASE_URL=postgresql://postgres:pass123@localhost:5432/booking && ts-node src/index.ts" ,
+    "local": "set DATABASE_URL=postgresql://postgres:pass123@localhost:5432/booking && ts-node src/index.ts",
     "docker": "DATABASE_URL=postgresql://postgres:pass123@pgdb:5432/booking ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "5.22.0",
-    "express": "4.21.2"
+    "@prisma/client": "^6.2.1",
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "@types/express": "5.0.0",
     "@types/node": "22.10.7",
-    "prisma": "5.22.0",
+    "prisma": "^6.2.1",
     "ts-node": "10.9.2",
     "typescript": "5.7.3"
   }

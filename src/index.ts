@@ -50,6 +50,17 @@ app.put('/workers/:id', async (req, res) => {
   res.json(user)
 })
 
+app.post('/worker-schedule', async (req, res) => {
+  const { workerId, startTime, endTime} = req.body
+  const user = await prisma.workerSchedule.create({
+    data: {
+      workerId,
+      startTime,
+      endTime,
+    },
+  })
+  res.json(user)
+})
 
 const server = app.listen(3000, () =>
   console.log(`🚀 Server ready at: http://localhost:3000`),
