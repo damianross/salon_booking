@@ -1,66 +1,35 @@
-import { Prisma, PrismaClient } from '@prisma/client'
 import express from 'express'
+import path from 'path';
 
-const prisma = new PrismaClient()
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.set('view engine', 'ejs');
 
-app.get('/workers', async (req, res) => {
-  const users = await prisma.worker.findMany()
-  res.json(users)
-})
+import bookings from './routes/bookings';
+app.use('/bookings/', bookings);
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/workers/:id', async (req, res) => {
-  const { id } = req.params
-  const user = await prisma.worker.findUnique({
-    where: {
-      id: Number(id),
-    },
-  })
-  res.json(user)
-})
 
-app.post('/workers', async (req, res) => {
-  const { name, phone, email } = req.body
-  const user = await prisma.worker.create({
-    data: {
-      name,
-      phone,
-      email,
-    },
-  })
-  res.json(user)
-})
+app.use(function(req, res, next) {
+  res.status(404);
 
-app.put('/workers/:id', async (req, res) => {
-  const { id } = req.params
-  const { name, phone, email } = req.body
-  const user = await prisma.worker.update({
-    where: {
-      id: Number(id),
-    },
-    data: {
-      name,
-      phone,
-      email,
-    },
-  })
-  res.json(user)
-})
+  // respond with html page
+  if (req.accepts('html')) {
+    res.sendFile('404.html', {root: __dirname + '/public'});
+    return;
+  }
 
-app.post('/worker-schedule', async (req, res) => {
-  const { workerId, startTime, endTime} = req.body
-  const user = await prisma.workerSchedule.create({
-    data: {
-      workerId,
-      startTime,
-      endTime,
-    },
-  })
-  res.json(user)
-})
+  // respond with json
+  if (req.accepts('json')) {
+    res.json({ error: 'Not found' });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.type('txt').send('Not found');
+});
 
 const server = app.listen(3000, () =>
   console.log(`🚀 Server ready at: http://localhost:3000`),

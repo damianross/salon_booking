@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Lounge Beauty Salon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reuse previous styles and add new ones */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #fff5f7;
+            min-height: 100vh;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 15px rgba(255,105,180,0.3);
+        }
+
+        nav {
+            background-color: white;
+            padding: 20px;
+            text-align: right;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .book-btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .about {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: white;
+            width: 300px;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        .contact-info {
+            line-height: 2;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="logo">LOGO</a>
+
+    <nav>
+        <a href="/booking.html" class="book-btn">Book Now</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Glamour Lounge</h1>
+        <div class="about">
+            <p>Where beauty meets elegance. Since 2015, we've been transforming clients with our premium beauty treatments and exceptional service. Experience luxury in the heart of the city.</p>
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="service-card">
+            <img src="https://place-holder.com/300x200/ffc2d1" alt="Hair Styling" class="service-img">
+            <h3>Hair Styling</h3>
+            <p>From trendy cuts to luxurious coloring, our expert stylists create your perfect look.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://place-holder.com/300x200/ffc2d1" alt="Spa Treatments" class="service-img">
+            <h3>Spa Treatments</h3>
+            <p>Rejuvenate with our signature facials, body wraps, and relaxation therapies.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://place-holder.com/300x200/ffc2d1" alt="Nail Art" class="service-img">
+            <h3>Nail Art</h3>
+            <p>Express yourself with our creative nail designs and premium manicure services.</p>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+            <p>📞 (555) 123-4567</p>
+            <p>📧 hello@glamourlounge.com</p>
+            <p>📍 123 Beauty Street, Glamour City</p>
+        </div>
+        <p>Open daily 9AM - 8PM</p>
+    </footer>
+</body>
+</html>

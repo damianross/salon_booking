@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed | Glamour Lounge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #fff5f7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 15px rgba(255,105,180,0.3);
+        }
+
+        .confirmation-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .check-icon {
+            font-size: 48px;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .details {
+            text-align: left;
+            margin: 25px 0;
+            padding: 20px;
+            background: #fff5f7;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style: none;
+            line-height: 2;
+        }
+
+        strong {
+            color: #ff69b4;
+        }
+
+        .thank-you {
+            margin-top: 20px;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .contact {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="logo">LOGO</a>
+
+    <div class="confirmation-card">
+        <i class="fas fa-check-circle check-icon"></i>
+        <h1>Booking Confirmed!</h1>
+        
+        <div class="details">
+            <ul>
+                <li><strong>Salon:</strong> Glamour Lounge</li>
+                <li><strong>Service:</strong> Premium Hair Styling</li>
+                <li><strong>Date:</strong> November 15, 2023</li>
+                <li><strong>Time:</strong> 2:00 PM</li>
+                <li><strong>Stylist:</strong> Jessica Smith</li>
+            </ul>
+        </div>
+
+        <p class="thank-you">Thank you for choosing us! 💖</p>
+        <p class="contact">Any changes? Contact us at (555) 123-4567</p>
+    </div>
+</body>
+</html>

@@ -29,7 +29,8 @@ model Worker {
 
 model Appointment {
   id        Int      @id @default(autoincrement())
-  date      DateTime
+  status    Status   
+  time      DateTime
   clientPhone  String   @map("client_phone")
   clientName  String    @map("client_name")
   worker    Worker   @relation(fields: [workerId], references: [id])
@@ -59,3 +60,10 @@ model EmailList {
 
   @@map("email_list")
   }
+
+enum Status {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELED
+}
